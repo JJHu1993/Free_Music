@@ -1,0 +1,15 @@
+{
+  "description":{
+    "message": "The chrome extension plugin helps users who used to listen to music on chinese websites(e.g. music.163.com, y.qq.com) but far away from china."
+  },
+  "help":{
+    "message": "If this plugin is not working properly, Please try to refresh webpage or reopen Chrome"
+  },
+  "feedback": {
+    "message": "If you have any problems, please <a href=\"mailto:jjhu1993@gmail.com?Subject=Free_Music%20issues\" target=\"_top\">Send Mail</a> ( press scroll wheel )"
+  },
+  "sharing": {
+    "message": "Share this plugin via"
+  }
+
+}

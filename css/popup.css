@@ -1,0 +1,67 @@
+/*
+ * This file is part of Free_Music.
+ *
+ * Foobar is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * Foobar is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
+ */
+
+
+body {
+    width: 34em;
+    display: block;
+    position: relative;
+}
+
+div#wrapper {
+    margin: 10px;
+    padding: 10px;
+}
+
+/* social networks */
+div#social-networks {
+    margin: 15px auto;
+    font-size: 110%;
+}
+
+
+/* mode setting section */
+div#setting {
+    margin-top: 15px;
+}
+
+div#buttons {
+    margin: 15px auto;
+    clear: both;
+	display: inline-block;
+}
+
+div#setting_description tr:last-child {
+    border-bottom: 1px solid #DDDDDD !important;
+    border-bottom: 1px solid #DDDDDD !important;
+}
+
+div.text_block {
+    margin-top: 10px;
+    text-align: center;
+}
+
+/* extra info and links */
+div#rating {
+    display: none;
+}
+
+
+div#version {
+    margin-top: 15px;
+    text-align: center;
+}

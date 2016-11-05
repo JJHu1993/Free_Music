@@ -1,0 +1,33 @@
+{
+  "manifest_version": 2,
+  "name": "Free Music",
+  "description": "The chrome extension plugin helps users who used to listen to music on chinese websites(e.g. music.163.com, y.qq.com) but far away from china.",
+  "version": "1.0",
+  "minimum_chrome_version": "23.0",
+
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "background": {
+    "scripts": [
+      "proxy.js",
+      "get_proxy_addr.js",
+      "config.js"
+    ]
+
+  },
+
+  "browser_action": {
+    "default_icon": "icons/icon48.png",
+    "default_popup": "popup.html"
+  },
+  "permissions": [
+    "tabs",
+    "activeTab",
+    "proxy",
+    "http://cn-proxy.com/"
+  ],
+  "default_locale": "en"
+}
