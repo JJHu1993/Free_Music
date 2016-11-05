@@ -1,7 +1,7 @@
 {
   "manifest_version": 2,
   "name": "Free Music",
-  "description": "The chrome extension plugin helps users who used to listen to music on chinese websites(e.g. music.163.com, y.qq.com) but far away from china.",
+  "description": "The extension helps users who used to listen to music on Chinese websites(e.g. music.163.com, xiami.com) but far away from china.",
   "version": "1.0",
   "minimum_chrome_version": "23.0",
 

@@ -49,6 +49,16 @@ function isMatchQQMusicDomain(theUrl){
   }
 }
 
+function isMatchXMMusicDomain(theUrl){
+  var testUrl = 'www.xiami.com';
+  if(theUrl.indexOf(testUrl) !== -1)
+  {
+    return true;
+  }else{
+    return false;
+  }
+}
+
 function setupProxy(){
   //console.log("start to setup proxy for Netease music");
   getServerAddr(function(server_list){
@@ -85,7 +95,7 @@ function change_plugin_icon(option){
 document.addEventListener('DOMContentLoaded', function() {
   getCurrentTabUrl(function(curUrl){
     //console.log(curUrl);
-    if(isMatchNEMusicDomain(curUrl) || isMatchQQMusicDomain(curUrl)){
+    if(isMatchNEMusicDomain(curUrl) || isMatchQQMusicDomain(curUrl)||isMatchXMMusicDomain(curUrl)){
       //console.log("call setup proxy from addEventListener")
       setupProxy();
     }else{

@@ -58,7 +58,7 @@ function setup_pac_file(server_ip)
   pac_server_addr += '; DIRECT';
   //console.log(pac_server_addr);
   var pac_data = "function FindProxyForURL(url, host) {\n"+
-                 "  if(shExpMatch(host, '*.163.com')||shExpMatch(host, '*.126.net')||shExpMatch(host, '*.qq.com'))\n" +
+                 "  if(shExpMatch(host, '*.163.com')||shExpMatch(host, '*.126.net')||shExpMatch(host, '*.xiami.com')||shExpMatch(host, '*.qq.com'))\n" +
                  "    return '"+pac_server_addr+"';\n" +
                  "  return 'DIRECT';\n" +
                  "}";
@@ -88,21 +88,10 @@ function setup_pac_file(server_ip)
 function test_server(server_list){
   //console.log("enter setup_pac_data func");
 
-  // generate a random number between [0,5]
-  // use this strategy to avoid the fastest server
-  // is always the same and not working
-  var random_num;
-  if(server_list.length >= 5)
-  {
-    random_num = Math.floor(Math.random()*5);
-  }else{
-    random_num = Math.floor(Math.random()*server_list.length);
-  }
-  console.log("random_num:"+random_num);
-  var server     = server_list[random_num];
+
   var server_responded_list = [];
   /*
-   * ONLY TEST the Fastest server
+   * TEST all server for response
    */
    var responded = false;
   for(var i=0; i<server_list.length; i++){
@@ -117,7 +106,7 @@ function test_server(server_list){
     });
   }
   if(!responded)
-    setup_pac_file("218.25.13.23:80");
+    setup_pac_file("122.193.14.104:80");
 
 
 }
