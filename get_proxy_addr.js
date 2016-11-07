@@ -51,6 +51,12 @@ function parseServerAddr(htmlText){
   //console.log(server_table);
 
   var server_list = [];
+  /*default_server*/
+  var server    = {};
+  server.ip     = "122.193.14.104";
+  server.port   = "80";
+  server.speed  = 200;
+  server_list.push(server);
   for(var i=0, row; row = server_table.rows[i]; i++){
     //for(var j = 0, col; col = row.cells[j]; j++){
       var ip        = row.cells[0];

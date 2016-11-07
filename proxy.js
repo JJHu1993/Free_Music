@@ -27,7 +27,6 @@ function ping(ip, port, callback){
     this.port = port;
     var _that = this;
 
-    try{
     this.img = new Image();
     this.img.onload = function(){
       _that.inUse = false;
@@ -49,10 +48,8 @@ function ping(ip, port, callback){
             _that.callback('timeout');
           }
         }, 1500);
-  }catch(e){
-    console.log("s",e.message);
-  }
-}
+
+      }
 }
 
 
@@ -94,9 +91,7 @@ function setup_pac_file(server_ip)
 function test_server(server_list){
   var server_responded_list = [];
 
-  /*
-   * TEST all server for response
-   */
+ /* TEST all server for response*/
   var responded = false;
   for(var i=0; i<server_list.length; i++){
     console.log("test ip: "+server_list[i].ip+":"+server_list[i].port);
