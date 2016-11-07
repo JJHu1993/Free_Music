@@ -1,21 +1,23 @@
 /*
  * This file is part of Free_Music.
  *
- * Foobar is free software: you can redistribute it and/or modify
+ * Free_Music is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
  * the Free Software Foundation, either version 3 of the License, or
  * (at your option) any later version.
  *
- * Foobar is distributed in the hope that it will be useful,
+ * Free_Music is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU General Public License for more details.
  *
  * You should have received a copy of the GNU General Public License
- * along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
+ * along with Free_Music.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-
+ /*
+  * Upload a icon image to test the server
+  */
 function ping(ip, port, callback){
   if(!this.inUse){
     this.status = 'unchecked';
@@ -25,6 +27,7 @@ function ping(ip, port, callback){
     this.port = port;
     var _that = this;
 
+    try{
     this.img = new Image();
     this.img.onload = function(){
       _that.inUse = false;
@@ -34,19 +37,22 @@ function ping(ip, port, callback){
     this.img.onerror = function(e){
       if(_that.inUse){
         _that.inUse = false;
-        _that.callback('responded', e);
+        _that.callback('error', e);
       }
 
     };
     this.start = new Date().getTime();
-    this.img.src = "http://"+ip;
+    this.img.src = "icons/icon16.png";
     this.timer = setTimeout(function(){
           if(_that.inUse){
             _that.inUse = false;
             _that.callback('timeout');
           }
         }, 1500);
+  }catch(e){
+    console.log("s",e.message);
   }
+}
 }
 
 
@@ -55,7 +61,7 @@ function setup_pac_file(server_ip)
   var pac_server_addr = 'PROXY '+server_ip;
   //pac_server_addr = 'PROXY 122.193.14.104:80; ';
   console.log("use ip :"+pac_server_addr);
-  pac_server_addr += '; DIRECT';
+  // pac_server_addr += '; DIRECT';
   //console.log(pac_server_addr);
   var pac_data = "function FindProxyForURL(url, host) {\n"+
                  "  if(shExpMatch(host, '*.163.com')||shExpMatch(host, '*.126.net')||shExpMatch(host, '*.xiami.com')||shExpMatch(host, '*.qq.com'))\n" +
@@ -86,16 +92,14 @@ function setup_pac_file(server_ip)
  * if ping succeeded, setup pac file.
  */
 function test_server(server_list){
-  //console.log("enter setup_pac_data func");
-
-
   var server_responded_list = [];
+
   /*
    * TEST all server for response
    */
-   var responded = false;
+  var responded = false;
   for(var i=0; i<server_list.length; i++){
-    console.log("test ip No:"+i);
+    console.log("test ip: "+server_list[i].ip+":"+server_list[i].port);
     new ping(server_list[i].ip, server_list[i].port, function(stat,e){
       // check if this server is healthy
       if(stat === 'responded' && !responded){

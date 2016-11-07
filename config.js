@@ -1,18 +1,18 @@
 /*
  * This file is part of Free_Music.
  *
- * Foobar is free software: you can redistribute it and/or modify
+ * Free_Music is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
  * the Free Software Foundation, either version 3 of the License, or
  * (at your option) any later version.
  *
- * Foobar is distributed in the hope that it will be useful,
+ * Free_Music is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU General Public License for more details.
  *
  * You should have received a copy of the GNU General Public License
- * along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
+ * along with Free_Music.  If not, see <http://www.gnu.org/licenses/>.
  */
 
 
@@ -71,27 +71,30 @@ function setupProxy(){
   });
 }
 
+/*
+ * Not use
+ */
 function change_plugin_icon(option){
   switch(option){
     case 'enable':
       chrome.browserAction.setIcon({
         path:"icon.png"
       });
-      chrome.browserAction.setTitile({title: 'unblock netease is on'});
+      chrome.browserAction.setTitile({title: 'turn on'});
       break;
     case 'disable':
       chrome.browserAction.setIcon({
         path:"greyicon.png"
       });
-      chrome.browserAction.setTitile({title: 'unblock netease is off'});
+      chrome.browserAction.setTitile({title: 'turn off'});
       break;
   }
 }
 
-
-/* When each time open netease website or qq music website
-* update the proxy server, and reset PAC file.
-*/
+/*
+ * When each time open netease website or xiami music website
+ * update the proxy server, and reset PAC file.
+ */
 document.addEventListener('DOMContentLoaded', function() {
   getCurrentTabUrl(function(curUrl){
     //console.log(curUrl);
