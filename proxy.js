@@ -93,7 +93,7 @@ function test_server(server_list){
 
  /* TEST all server for response*/
   var responded = false;
-  for(var i=0; i<server_list.length; i++){
+  for(var i=0; i<3; i++){
     console.log("test ip: "+server_list[i].ip+":"+server_list[i].port);
     new ping(server_list[i].ip, server_list[i].port, function(stat,e){
       // check if this server is healthy
