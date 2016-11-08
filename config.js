@@ -72,7 +72,7 @@ function setupProxy(){
 }
 
 /*
- * Not use
+ * No use
  */
 function change_plugin_icon(option){
   switch(option){
@@ -95,18 +95,18 @@ function change_plugin_icon(option){
  * When each time open netease website or xiami music website
  * update the proxy server, and reset PAC file.
  */
-document.addEventListener('DOMContentLoaded', function() {
-  getCurrentTabUrl(function(curUrl){
-    //console.log(curUrl);
-    if(isMatchNEMusicDomain(curUrl) || isMatchQQMusicDomain(curUrl)||isMatchXMMusicDomain(curUrl)){
-      //console.log("call setup proxy from addEventListener")
-      setupProxy();
-    }else{
-      //console.log("false");
-    }
-
-  });
-});
+// document.addEventListener('DOMContentLoaded', function() {
+//   getCurrentTabUrl(function(curUrl){
+//     //console.log(curUrl);
+//     if(isMatchNEMusicDomain(curUrl) || isMatchQQMusicDomain(curUrl)||isMatchXMMusicDomain(curUrl)){
+//       //console.log("call setup proxy from addEventListener")
+//       setupProxy();
+//     }else{
+//       //console.log("false");
+//     }
+//
+//   });
+// });
 
 
 // set up a pac file when plugin lanched
