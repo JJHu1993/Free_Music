@@ -93,7 +93,7 @@ function test_server(server_list){
 
  /* TEST all server for response*/
   var responded = false;
-  for(var i=0; i<3; i++){
+  for(var i=server_list.length/2; i<server_list.length; i++){
     console.log("test ip: "+server_list[i].ip+":"+server_list[i].port);
     new ping(server_list[i].ip, server_list[i].port, function(stat,e){
       // check if this server is healthy
@@ -104,8 +104,7 @@ function test_server(server_list){
       }
     });
   }
-  if(!responded)
-    setup_pac_file("122.193.14.104:80");
+
 
 
 }

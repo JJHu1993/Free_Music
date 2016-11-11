@@ -27,7 +27,7 @@
     "tabs",
     "activeTab",
     "proxy",
-    "http://cn-proxy.com/"
+    "http://www.getproxy.jp/proxyapi?ApiKey=d562d5c771f458e116ed24e597351158c9695f5b&area=CN&sort=requesttime&orderby=asc"
   ],
   "default_locale": "en"
 }
