@@ -61,9 +61,6 @@ function parseServerAddr(htmlText){
       server_list.push(server);
 
   }
-  for(var i=0; i < server_list.length; i++){
-   console.log(server_list[i]);
-  }
 
   return server_list;
   //console.log(server_info);
