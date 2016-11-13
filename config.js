@@ -110,5 +110,5 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 // set up a pac file when plugin lanched
-setupProxy();
+// setupProxy();
 FM_Version = '1.0';
