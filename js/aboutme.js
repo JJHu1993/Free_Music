@@ -27,6 +27,6 @@ $(document).ready(function() {
     "use strict";
     set_i18n_text();
 
-    $('div#version small').html('Free Music v' + FM_Version);
+    $('div#version small').html('Free Music V2.0');
 
 });

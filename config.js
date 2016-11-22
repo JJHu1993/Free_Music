@@ -64,9 +64,15 @@ function setupProxy(){
   getServerAddr(function(server_list){
     for(var i = 0; i < server_list.length; i++)
     {
+      var submenu = document.getElementsByClassName('submenu')[0]
+      var li = document.createElement('li');
+      var span = document.createElement('span');
+      span.appendChild(document.createTextNode(server_list[i].info+'<IP>'+server_list[i].ip+':'+server_list[i].port));
+      li.appendChild(span);
+      submenu.appendChild(li);
       console.log(server_list[i]);
     }
-    setup_proxy(server_list);
+    // setup_proxy(server_list);
 
   });
 }
@@ -95,20 +101,19 @@ function change_plugin_icon(option){
  * When each time open netease website or xiami music website
  * update the proxy server, and reset PAC file.
  */
-document.addEventListener('DOMContentLoaded', function() {
-  getCurrentTabUrl(function(curUrl){
-    //console.log(curUrl);
-    if(isMatchNEMusicDomain(curUrl) || isMatchQQMusicDomain(curUrl)||isMatchXMMusicDomain(curUrl)){
-      //console.log("call setup proxy from addEventListener")
-      setupProxy();
-    }else{
-      //console.log("false");
-    }
-
-  });
-});
+// document.addEventListener('DOMContentLoaded', function() {
+//   getCurrentTabUrl(function(curUrl){
+//     //console.log(curUrl);
+//     if(isMatchNEMusicDomain(curUrl) ||isMatchXMMusicDomain(curUrl)){
+//       //console.log("call setup proxy from addEventListener")
+//       setupProxy();
+//     }else{
+//       //console.log("false");
+//     }
+//
+//   });
+// });
 
 
 // set up a pac file when plugin lanched
-// setupProxy();
-FM_Version = '1.0';
+setupProxy();
