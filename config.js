@@ -62,6 +62,15 @@ function isMatchXMMusicDomain(theUrl){
 function setupProxy(){
   //console.log("start to setup proxy for Netease music");
   getServerAddr(function(server_list){
+    //the number of servers
+    var mainmenu = document.getElementsByClassName('mainmenu')[0];
+    var li = mainmenu.getElementsByTagName('li')[0];
+    var message = document.createElement('div');
+    message.className = 'messages';
+    message.appendChild(document.createTextNode(server_list.length));
+    li.appendChild(message);
+
+    //information of servers
     for(var i = 0; i < server_list.length; i++)
     {
       var submenu = document.getElementsByClassName('submenu')[0]
@@ -72,6 +81,7 @@ function setupProxy(){
       submenu.appendChild(li);
       console.log(server_list[i]);
     }
+
     // setup_proxy(server_list);
 
   });
