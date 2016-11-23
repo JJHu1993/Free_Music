@@ -3,6 +3,12 @@
 The chrome extension plugin helps users who used to listen to music on Chinese websites(e.g. music.163.com, xiami.com) but far away from china.
 You can install this plugin through Chrome Web Store:
 
+## UI
+![alt tag](images/UI1.png)
+
+![alt tag](images/UI2.png)
+
+
 
 ## License
 ![alt tag](https://www.gnu.org/graphics/gplv3-127x51.png)
