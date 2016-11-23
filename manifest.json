@@ -10,14 +10,6 @@
     "48": "icons/icon48.png",
     "128": "icons/icon128.png"
   },
-  "background": {
-    "scripts": [
-      "proxy.js",
-      "get_proxy_addr.js",
-      "config.js"
-    ]
-
-  },
 
   "browser_action": {
     "default_icon": "icons/icon48.png",
