@@ -56,12 +56,12 @@ function ping(ip, port, callback){
 function setup_pac_file(server_ip)
 {
   var pac_server_addr = 'PROXY '+server_ip;
-  // pac_server_addr = 'PROXY 1.82.216.135:80'
+  //var pac_server_addr = 'PROXY 111.13.109.27:80';
   console.log("use ip :"+pac_server_addr);
   // pac_server_addr += '; DIRECT';
   //console.log(pac_server_addr);
   var pac_data = "function FindProxyForURL(url, host) {\n"+
-                 "  if(shExpMatch(host, '*.163.com')||shExpMatch(host, '*.126.net')||shExpMatch(host, '*.xiami.com'))\n" +
+                 "  if(shExpMatch(host, '*.163.com')||shExpMatch(host, '*.126.net')||shExpMatch(host, '*.xiami.com')||shExpMatch(host, '*.iqiyi.com'))\n" +
                  "    return '"+pac_server_addr+"';\n" +
                  "  return 'DIRECT';\n" +
                  "}";

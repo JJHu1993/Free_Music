@@ -131,10 +131,58 @@ function parseServerAddr(htmlText){
 }
 
 
+function parseServerAddr2(htmlText){
+  if(!htmlText){
+    console.log("request error");
+  }
+
+  var parser = document.createElement('html');
+  parser.innerHTML = htmlText;
+
+  //var second_div = parser.getElementsByTagName('div');
+  var table = parser.getElementsByTagName('table')[4];
+
+  var server_table = table.getElementsByTagName('tbody')[0];
+  //console.log(server_table);
+  var server_list = [];
+  /*default server*/
+  // var server    = {};
+  // server.ip     = "122.96.59.105";
+  // server.port   = "81";
+  // server.speed  = 200;
+  // server_list.push(server);
+  for(var i=3, row; row = server_table.rows[i]; i++){
+    //skip icon
+      if(i == 8) continue;
+      var ip        = row.cells[1];
+      var port      = row.cells[2];
+
+
+      var server    = {};
+      server.info   = "China"
+      server.ip     = String(ip.textContent)
+      server.ip     = server.ip.substring(0,server.ip.length-2);
+      server.port   = port.textContent;
+      server_list.push(server);
+      //console.log("ip:"+ip.textContent+" port:"+port.textContent);
+    //}
+  }
+  //for(var i=0; i < server_list.length; i++){
+  //  console.log(server_list[i]);
+  //}
+
+  return server_list;
+  //console.log(server_info);
+}
+
 function getServerAddr(callback){
-  var url = "http://cn-proxy.com/";
+  //var url = "http://cn-proxy.com/";
+  var url = "http://www.xroxy.com/proxylist.php?port=&type=All_http&ssl=ssl&country=CN&latency=3000&reliability=#table"
   httpGet(url, function(htmlText){
-    var server_list = parseServerAddr(htmlText);
+    //for website cn-proxy.com/
+    //var server_list = parseServerAddr(htmlText);
+    //for website www.xroxy.com/
+    var server_list = parseServerAddr2(htmlText);
     //
     // if(server_list.length >=2){
     //   if(server_list[0].speed < server_list[1].speed){

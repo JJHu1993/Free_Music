@@ -19,7 +19,7 @@
     "tabs",
     "activeTab",
     "proxy",
-    "http://cn-proxy.com/"
+    "http://www.xroxy.com/proxylist.php?port=&type=All_http&ssl=ssl&country=CN&latency=3000&reliability=#table"
   ],
   "default_locale": "en"
 }
